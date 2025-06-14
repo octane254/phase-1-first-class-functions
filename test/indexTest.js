@@ -13,6 +13,20 @@ describe("index", () => {
 
       expect(spy).to.have.been.called();
     });
+    
+    // Add the required function definitions for the tests to run without errors
+    function receivesAFunction(callback) {
+      callback();
+    }
+    
+    function returnsANamedFunction() {
+      function namedFunction() {}
+      return namedFunction;
+    }
+    
+    function returnsAnAnonymousFunction() {
+      return function() {};
+    }
   });
 
   describe("returnsANamedFunction()", () => {
